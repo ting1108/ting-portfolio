@@ -1,0 +1,781 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>陳亭蓁 TingChen</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1e456a40-f5b2-80c2-9897-f74593af49f0" class="page sans"><header><h1 class="page-title">陳亭蓁 TingChen</h1><p class="page-description"></p></header><div class="page-body"><hr id="1e456a40-f5b2-80f6-af15-c7a15c0a9788"/><p id="1e456a40-f5b2-80f4-8c9f-d3b17662a794" class="">UX / UI 設計 × 服務設計 × 使用者研究</p><h2 id="1e456a40-f5b2-802f-b62a-ca9c90ec04cd" class="">👋🏾 Hi~我是陳亭蓁 </h2><p id="1e456a40-f5b2-8065-9b97-e8b5120dedcf" class="">橫跨設計、行銷、前端與專案管理的「跨語系設計人」。</p><p id="1e456a40-f5b2-80ad-a53e-d4e4d4416b98" class="">具備批判思維與系統設計能力，熟悉 Figma、HTML/CSS，能獨立完成使用者研究、原型設計與協作驗證。擅長從使用者痛點出發，結合設計、研究與跨域溝通，打造直覺、有溫度的體驗。</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1e456a40-f5b2-802c-a539-ee24fb3914c6"><div style="width:100%"><h3 id="1e456a40-f5b2-8016-a6a2-f9fa7ed4ccbc" class=""><a href="https://ting-portfolio.ghost.io/">Website Blog作品集</a>（較推薦）</h3></div></figure><div id="1e456a40-f5b2-8031-bc96-d9be7a969b9d" class="column-list"><div id="1e456a40-f5b2-803c-9638-f536d9f849b6" style="width:81.25%" class="column"><h3 id="1e456a40-f5b2-80a3-8c6e-eb289271d902" class="">聯絡方式</h3><p id="1e456a40-f5b2-8075-8be3-f75bfea9e68b" class="">｜E-mail: <a href="mailto:tingchen2004@gmail.com">tingchen2004@gmail.com</a> </p><p id="1e456a40-f5b2-8060-9a8d-f69cbac291ef" class=""> | Phone: +886 965 666 664  </p><p id="1e456a40-f5b2-802c-813c-da0bb47fe5f5" class=""> | <a href="http://www.linkedin.com/in/亭蓁-陳-913474269">LinkedIn</a></p></div><div id="1e456a40-f5b2-802d-a27b-d93fb274a0cb" style="width:118.75%" class="column"><h3 id="1e456a40-f5b2-80a7-8381-e9c51d70627d" class="">教育背景</h3><p id="1e456a40-f5b2-8052-abfc-df700c8c2b91" class="">國立陽明交通大學傳播與科技學系（二年級，修習三年級課程中）</p><p id="1e456a40-f5b2-8038-be5e-f2575197fd7a" class="">｜輔系人文社會學系｜跨領域設計與創新科技學程</p><p id="1e456a40-f5b2-80b3-a9e3-dd66537c4eaf" class="">（曾就讀人文社會學系，後轉入傳播與科技學系，結合人文素養與科技應用，現正參與畢業專題製作。）</p></div></div><p id="1e456a40-f5b2-8061-9e95-ed15d608eb8d" class="">
+</p><hr id="1e456a40-f5b2-8004-a6ec-ccc82f593d55"/><h3 id="1e456a40-f5b2-80e1-8a7e-e3aab5ff2675" class="">作品概覽</h3><div id="1e456a40-f5b2-8061-b980-c58e0713fabc" class="column-list"><div id="1e456a40-f5b2-8086-b743-ea7feb82bd2d" style="width:100%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1e456a40-f5b2-80c6-8fc3-cb29a8347c6a"><div style="width:100%"><p id="1e456a40-f5b2-801a-9913-ed3d0b6d16b0" class="">👵🏻阿公阿嬤哇想曆，撕下日曆思念你！</p></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1e456a40-f5b2-80df-83de-ca0aa86ce849"><div style="width:100%"><p id="1e456a40-f5b2-80b3-a9a6-ee60686d5674" class="">💻陽明交大ICT網站Redesign  </p></div></figure></div><div id="1e456a40-f5b2-80e5-bbaf-e873cd11ab24" style="width:100%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1e456a40-f5b2-8043-ae27-f6a89d5fb58d"><div style="width:100%"><p id="1e456a40-f5b2-800e-98fd-cfc885443424" class="">🎨 All Matter All Count 數位性暴力主題線上展設計</p></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1e456a40-f5b2-80d2-84d6-d0a3a7398438"><div style="width:100%"><p id="1e456a40-f5b2-8014-a1e7-f55913d5d581" class="">🕹️Moonlight babybox 交大首創復古街機娛樂企劃</p></div></figure></div><div id="1e456a40-f5b2-8096-a8e9-e917efd8c5d7" style="width:100%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1e456a40-f5b2-80a2-953a-eb8729e4b7a3"><div style="width:100%"><p id="1e456a40-f5b2-804a-8356-c2da93d0ba25" class="">🖍️Everyday Creative Lab × 台博館｜新住民母親共創小誌工作坊</p></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1e456a40-f5b2-8084-a1d7-f2ae51c0faf9"><div style="width:100%"><p id="1e456a40-f5b2-8060-ba0f-f354b5103f3d" class="">🧠腦袋的Playground</p></div></figure></div></div><hr id="1e456a40-f5b2-8084-896c-ec975a9d13f3"/><h1 id="1e456a40-f5b2-80ce-b84d-d51f5d43ea20" class="">阿公阿嬤哇想曆</h1><figure id="1e456a40-f5b2-80f3-b80a-e93e7aab2e0f" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/---2-2.png"><img src="https://ting-portfolio.ghost.io/content/images/2025/04/---2-2.png"/></a></figure><blockquote id="1e456a40-f5b2-807e-99f1-f1e345132836" class="">一款為提升「長者幸福感」的數位互動溝通裝置</blockquote><p id="1e456a40-f5b2-80c1-a5de-d85d96b95022" class="">
+</p><p id="1e456a40-f5b2-8086-b84b-da089cac51a4" class="">TAICHI 台灣人機互動協會 Demo作品｜UX設計｜使用者流程圖｜Figma</p><div id="1e456a40-f5b2-805a-924e-fb43f6c03605" class="column-list"><div id="1e456a40-f5b2-80d0-bd3e-c5d86c1f6064" style="width:100%" class="column"><figure id="1e456a40-f5b2-80af-942a-ed70aaea0b0f" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/---7.jpg"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/---7.jpg"/></a></figure><p id="1e456a40-f5b2-8090-8c97-cf05ded2d964" class="">
+</p></div><div id="1e456a40-f5b2-802a-abba-c39a0efe2b21" style="width:100%" class="column"><p id="1e456a40-f5b2-80b9-a7c5-e4b5df0c838e" class="">
+</p><p id="1e456a40-f5b2-80bc-b5f9-fa62b0877b16" class="">一款<strong>跨世代家庭溝通裝置</strong>，結合紙本日曆與 LINE 傳訊，設計<strong>非同步交流體驗</strong>。讓長輩透過熟悉的「撕日曆＋語音」行為感受到陪伴，<strong>解決科技門檻與作息差異造成的距離感。</strong></p><p id="1e456a40-f5b2-80c9-9f49-eb3945d8b09a" class=""><em>專案後期，我們反思世代更替下的存續性挑戰。</em></p><p id="1e456a40-f5b2-806d-9c28-e08f67da0a12" class="">
+</p></div></div><hr id="1e456a40-f5b2-80f0-817b-daad36f8e3e8"/><p id="1e456a40-f5b2-8086-947a-f7c3d7fe989c" class="">2024.06 - 07 OpenHCI 人機互動工作坊</p><h3 id="1e456a40-f5b2-8033-8e5f-e45375e07c68" class=""><strong>使用者回饋摘要</strong></h3><p id="1e456a40-f5b2-8021-a98a-dc69c00e970e" class="">我向受測者展示哇想曆 demo 並詢問：「你會想用這樣的方式與長輩互動嗎？」</p><p id="1e456a40-f5b2-8025-a511-d0e0172118aa" class="">✦ 滿分為 5 分，<strong>受測者給出 5 分滿分評價</strong></p><p id="1e456a40-f5b2-80f9-9a59-c1b13ccdbb65" class="">✦ 回饋：「覺得很好玩」</p><h3 id="1e456a40-f5b2-8065-9137-c6f9dc7869bf" class=""><strong>我的角色</strong></h3><p id="1e456a40-f5b2-8042-bfc9-d48c16d7cd7d" class="">｜發掘長輩日常洞察，挖掘「看相簿、撕日曆」的行為痛點</p><p id="1e456a40-f5b2-80a4-92f4-f6b8f969ca7d" class="">｜設計 UX Flow、參與互動邏輯規劃與情境流程圖繪製</p><p id="1e456a40-f5b2-80b6-87f3-dfe6a766e1b1" class="">｜負責簡報提案、情感敘事與故事邏輯鋪陳</p><div id="1e456a40-f5b2-807c-8efe-ed50c84d5aa7" class="column-list"><div id="1e456a40-f5b2-80ec-90e4-cf7558b3aac8" style="width:100%" class="column"><figure id="1e456a40-f5b2-804d-b842-da09b23bcf41" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/---6.jpg"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/---6.jpg"/></a></figure><p id="1e456a40-f5b2-8029-825d-e1ffe7e4a01e" class="">
+</p></div><div id="1e456a40-f5b2-8073-b849-de009c1acd4e" style="width:100%" class="column"><p id="1e456a40-f5b2-80b4-a66d-ea33cb7bb7d5" class=""><strong>在台灣每兩位長輩就有一位感到孤單。</strong></p><p id="1e456a40-f5b2-80d1-9fb6-fd2497118edf" class="">我們發現，多數與孩子分隔兩地的長者，最常說的是：<em>「我不想打擾孩子，但好想多看看他們。」</em></p><p id="1e456a40-f5b2-806d-bf34-fe1900fc8828" class="">我們設計出 「哇想曆」——</p><p id="1e456a40-f5b2-807d-94de-e5e1886606c1" class=""><strong>一款結合紙本日曆與數位互動的非同步溝通裝置。</strong></p><p id="1e456a40-f5b2-80ef-8a25-f2378d83bea9" class="">
+</p></div></div><p id="1e456a40-f5b2-80ce-a543-fe75b3813324" class="">年輕一輩可透過 LINE 傳送照片與文字，長輩則能透過撕日曆、按鍵錄音來回應，它讓科技變得「看不見」，保留長輩熟悉的行為，創造<strong>貼合生活情境又溫柔陪伴的日常體驗</strong>。</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1e456a40-f5b2-809e-8ddf-fb51b8501b0d"><div style="width:100%"><p id="1e456a40-f5b2-8026-b0ab-c3da0153f62a" class="">📅 這不只是日曆，是一個為了「想你」而存在的溝通儀式。</p></div></figure><p id="1e456a40-f5b2-8010-8598-d9d1eb406a4f" class="">因為對長輩來說，幸福是來自於——每天都能「看到」你。</p><p id="1e456a40-f5b2-8019-81f8-e7218940a920" class="">
+</p><h3 id="1e456a40-f5b2-801c-ae26-d93a53647889" class=""><strong>專案亮點｜把照片、語音和思念印進日常</strong></h3><p id="1e456a40-f5b2-8024-9a92-e9a4b63a67aa" class="">✦ 每天看日曆，都能看到孩子傳來的訊息與日常分享</p><p id="1e456a40-f5b2-8086-a2a4-fb92965ea321" class="">✦ 每張日曆紙都可保存，形成一冊會更新的回憶相簿（左圖）</p><p id="1e456a40-f5b2-80c8-9360-e6e7386e9f94" class="">✦ 長輩按下錄音鍵（紅色按鈕）回覆，讓溝通成為雙向、貼心的日常儀式（右圖）</p><div id="1e456a40-f5b2-80f5-ade8-c2fc27250efb" class="column-list"><div id="1e456a40-f5b2-80fd-a729-f5d3a9ab05c9" style="width:106.25%" class="column"><figure id="1e456a40-f5b2-805b-845d-dcab34633f11" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/---3-1.jpg"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/---3-1.jpg"/></a></figure><p id="1e456a40-f5b2-80e3-b861-ee2a43cf19b9" class="">｜左圖為收納成相簿的日曆紙，右圖為紅色按鈕錄音鍵</p></div><div id="1e456a40-f5b2-80d9-8eb2-c0055320c5eb" style="width:43.75%" class="column"><figure id="1e456a40-f5b2-8079-a5c6-cb4061f99d9e" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/---5.jpg"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/---5.jpg"/></a></figure></div></div><p id="1e456a40-f5b2-804c-b8d7-cc757eb5d2de" class="">
+</p><h3 id="1e456a40-f5b2-800a-99b4-d65cc5ca7515" class=""><strong>實體展示｜不只停留在Figma，我們做出了Hifi-Prototype！</strong></h3><div id="1e456a40-f5b2-809b-880f-dd0ffca3478e" class="column-list"><div id="1e456a40-f5b2-804a-a0bc-c82e33764e05" style="width:112.5%" class="column"><p id="1e456a40-f5b2-80ff-89d6-d6aae3b506ea" class="">｜哇想曆的日常實際使用情境</p><figure id="1e456a40-f5b2-8013-88a3-d8823aa5754a" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/Frame-4.png"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/Frame-4.png"/></a></figure><p id="1e456a40-f5b2-80b3-a946-f859f7f09c96" class="">✦ <strong>互動日曆相紙可撕可掛，便於書寫與保存</strong></p><p id="1e456a40-f5b2-80e3-88d9-eba5785e07ad" class="">每張相紙皆可撕下收藏，亦可掛回機台（透過上方圓孔設計），延續長輩使用日曆書寫記事的習慣。</p></div><div id="1e456a40-f5b2-807a-a6f9-fb1433d8d512" style="width:62.499999999999986%" class="column"><p id="1e456a40-f5b2-80ba-b2f9-cac554bf3a10" class="">
+</p><figure id="1e456a40-f5b2-802f-8d1e-d598f4a20699" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/---.png"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/---.png"/></a></figure><p id="1e456a40-f5b2-80ba-ab42-df6fb51e2ca6" class=""><strong>✦ 保留熟悉的傳統日曆介面設計</strong></p><p id="1e456a40-f5b2-80a9-bca9-ff647cf8d9a6" class="">結合農曆、節氣與每日宜忌資訊，讓長輩閱讀更直覺，也保留生活儀式感</p></div></div><h3 id="1e456a40-f5b2-80ba-9536-cfb59402fc4e" class=""><strong>補充機制說明</strong></h3><p id="1e456a40-f5b2-800c-8974-ed430fd0a322" class="">✦ 透過 LINE Bot 傳送照片與訊息，內容同步至哇想曆</p><p id="1e456a40-f5b2-8049-8709-c2bac77c8f97" class="">✦ 每日早上 8 點提醒傳送</p><p id="1e456a40-f5b2-802d-ab3c-de3c25f30b5e" class="">✦ 傳送後有鼓勵訊息回饋</p><p id="1e456a40-f5b2-8070-92f5-e1919ceb14c9" class="">✦ 若未傳內容或未撕曆，LINE Bot 會主動提醒</p><p id="1e456a40-f5b2-80d5-a9db-d472383700a7" class=""><strong>使用者研究流程</strong></p><h3 id="1e456a40-f5b2-80a9-b8ff-d574252e9b81" class=""><strong>背景研究</strong></h3><p id="1e456a40-f5b2-8095-bb86-d35188b60b5b" class="">我們在文獻中觀察到家庭關係是長輩幸福感的重要來源，會直接影響他們的心理幸福感，更進一步影響生理健康。</p><blockquote id="1e456a40-f5b2-80bc-9f08-c650d86bf888" class="">和諧的家庭關係是台灣年長者心理幸福感的重要來源</blockquote><h3 id="1e456a40-f5b2-8099-80ff-e660f034c818" class=""><strong>競品分析</strong></h3><div id="1e456a40-f5b2-80e7-9705-f62cf2bb5e78" class="column-list"><div id="1e456a40-f5b2-806c-8d8a-d21c28c8683c" style="width:100%" class="column"><figure id="1e456a40-f5b2-8030-9a9f-eb483389ad0b" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/-----2---1--2.png"><img style="width:680px" src="https://ting-portfolio.ghost.io/content/images/2025/04/-----2---1--2.png"/></a></figure></div><div id="1e456a40-f5b2-8041-ac34-f938ee7c79ad" style="width:100%" class="column"><figure id="1e456a40-f5b2-80c6-ba75-fb8c48097461" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/-----1---1--2.png"><img style="width:682px" src="https://ting-portfolio.ghost.io/content/images/2025/04/-----1---1--2.png"/></a></figure></div><div id="1e456a40-f5b2-80ad-9588-e1da915ccf5b" style="width:100%" class="column"><figure id="1e456a40-f5b2-80ff-a28f-d878e8eac63f" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/-----3--2.png"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/-----3--2.png"/></a></figure></div></div><div id="1e456a40-f5b2-8046-a5c8-d52f19c00d0d" class="column-list"><div id="1e456a40-f5b2-8089-a6ea-e7d0363a0697" style="width:100%" class="column"><p id="1e456a40-f5b2-80d7-9682-d1b4178d3cb8" class="">Story worth：用提問串起回憶，寫成一本家的故事書。</p><p id="1e456a40-f5b2-800e-9339-e30bfcf67e8c" class=""><em>insight：僅單向紀錄，缺乏雙向交流</em></p><p id="1e456a40-f5b2-807f-8448-f4cf811faa94" class="">
+</p></div><div id="1e456a40-f5b2-80e3-80bd-da8db4dfc3e4" style="width:100%" class="column"><p id="1e456a40-f5b2-8020-ba0b-e8f927c74fb2" class="">Grandbox：訂閱制寄送家庭小禮給長輩，傳遞思念與關愛。</p><p id="1e456a40-f5b2-80c0-9746-edad68209692" class=""><em>insight：形式被動，難以提升互動頻率</em></p><p id="1e456a40-f5b2-8074-9270-e70e22a518cd" class="">
+</p></div><div id="1e456a40-f5b2-8067-ad4d-db5a8aaabc29" style="width:100%" class="column"><p id="1e456a40-f5b2-8092-a696-c7de03b0fe73" class="">LINE：即時傳送文字、語音與視訊訊息。</p><p id="1e456a40-f5b2-80c2-9ef6-e0b72227106c" class=""><em>insight：科技使用門檻高，長輩少用</em></p><p id="1e456a40-f5b2-80e8-b62c-d13d6399e455" class="">
+</p></div></div><blockquote id="1e456a40-f5b2-80bf-a6f5-f38f62a829aa" class=""><strong>現有產品僅針對「回憶」或「連繫」，缺乏頻繁的雙向交流機會</strong></blockquote><h2 id="1e456a40-f5b2-8038-a153-fc944d4d9a2d" class=""><strong>Persona</strong></h2><div id="1e456a40-f5b2-80da-8cb7-ccb4b02b0860" class="column-list"><div id="1e456a40-f5b2-80ee-a47d-df3beeae9634" style="width:100%" class="column"><figure id="1e456a40-f5b2-803e-8489-d4ea76ef07ac" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/-------2025-04-22-162116-1.png"><img style="width:205.9921875px" src="https://ting-portfolio.ghost.io/content/images/2025/04/-------2025-04-22-162116-1.png"/></a></figure><p id="1e456a40-f5b2-80e0-ab49-fc1171cc3dcd" class="">
+</p></div><div id="1e456a40-f5b2-8007-bb3f-eb49326e6911" style="width:100%" class="column"><figure id="1e456a40-f5b2-8033-924a-ece273d556e0" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/-------2025-04-22-162126.png"><img style="width:205.9921875px" src="https://ting-portfolio.ghost.io/content/images/2025/04/-------2025-04-22-162126.png"/></a></figure><p id="1e456a40-f5b2-800a-a38d-d54ae926b934" class="">
+</p></div><div id="1e456a40-f5b2-8086-9e4f-f278f07b73a0" style="width:100%" class="column"><figure id="1e456a40-f5b2-8056-a27e-c61437517647" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/-------2025-04-22-162136.png"><img style="width:205.9921875px" src="https://ting-portfolio.ghost.io/content/images/2025/04/-------2025-04-22-162136.png"/></a></figure><p id="1e456a40-f5b2-800b-8865-c642dd3c1f18" class="">
+</p></div></div><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1e456a40-f5b2-80c6-b068-da15740486d0"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1e456a40-f5b2-8003-ab38-e6d7fe674ae4" class=""><strong>POV</strong>- 高齡且不與兒孫同住，不愛改變的美蘭，<strong>需要一個低科技門檻且貼合習慣的方法與家人互動</strong>，因為在她的世界裡，與家人互動獲得的快樂很重要。- 生活忙碌的淑芬一家人，<strong>需要一個方法與生活作息不同的美蘭聯絡</strong>，因為在他們的世界裡，與美蘭有連結所獲得的安心感很重要</p></div></figure><h3 id="1e456a40-f5b2-8078-b67a-ed95889dbce5" class=""><strong>How might we...</strong></h3><blockquote id="1e456a40-f5b2-8074-9689-c0f05aa700b8" class=""><strong>1. 我們如何使科技融入「不善操作科技的長者」的生活</strong></blockquote><p id="1e456a40-f5b2-8001-b3ba-fc0ae83f5646" class="">設計方向：低學習成本、貼合習慣</p><p id="1e456a40-f5b2-80bf-a6fe-f4506a0491f4" class="">解方發想：空閒時會翻日曆、相簿</p><p id="1e456a40-f5b2-80aa-bc78-d857eec18f64" class="">
+</p><blockquote id="1e456a40-f5b2-801f-99c5-ce27c9078934" class=""><strong>2.我們如何在生活作息不同的情況，達成雙方的非同步溝通</strong></blockquote><p id="1e456a40-f5b2-808a-9bd4-c67dc5045e5c" class="">設計方向：網路串聯、即時留言平台</p><p id="1e456a40-f5b2-8016-800c-cdc1e5c63c06" class="">解方發想：即時訊息</p><p id="1e456a40-f5b2-8057-a56c-da53480025fb" class="">
+</p><blockquote id="1e456a40-f5b2-80e7-8d98-d5a22f81a713" class=""><strong>3.我們如何在生活作息不同的情況，達成雙方的非同步溝通</strong></blockquote><p id="1e456a40-f5b2-8086-9bc2-dd6f78af890e" class="">設計方向：與生活中的物件融合</p><p id="1e456a40-f5b2-808a-b35b-c079d05d2c1a" class="">解方發想：兒女與孫子世代多用科技年長者多依賴紙本與實體</p><hr id="1e456a40-f5b2-801b-a7fb-d5c5e57ecee0"/><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1e456a40-f5b2-8012-ab27-c5768f34328f"><div style="width:100%"><blockquote id="1e456a40-f5b2-805d-bb1a-e3804343963e" class="">於是我們做了一個打破科技門檻與生活習慣不同，串連關心、建立回憶的日曆！</blockquote></div></figure><p id="1e456a40-f5b2-80ab-ab54-faebbed30fbb" class="">
+</p><p id="1e456a40-f5b2-80e1-881c-e97c564a3269" class="">雷切木板＋卷軸＋感測器＋iPad＋麥克風＋按紐的高擬真模型</p><div id="1e456a40-f5b2-803c-8510-d038ea2187ee" class="column-list"><div id="1e456a40-f5b2-8094-abe6-e3fc90ba23ae" style="width:68.75%" class="column"><figure id="1e456a40-f5b2-8063-93bd-c644ead442ba" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/---4-1.jpg"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/---4-1.jpg"/></a></figure><p id="1e456a40-f5b2-80eb-b14b-c202d9886347" class="">
+</p></div><div id="1e456a40-f5b2-8038-b2bc-e7c8af6ed92a" style="width:31.25%" class="column"><p id="1e456a40-f5b2-80c4-a4ab-da084658d643" class="">
+</p><p id="1e456a40-f5b2-80c5-bab0-e3b45e993f06" class="">
+</p><p id="1e456a40-f5b2-8091-b509-ca0887555233" class="">
+</p><p id="1e456a40-f5b2-8005-917e-ed0bc8b1247f" class="">
+</p><p id="1e456a40-f5b2-804b-bc69-c21d51f89156" class="">
+</p><p id="1e456a40-f5b2-80d8-8afe-f9b951b75c15" class="">
+</p><p id="1e456a40-f5b2-8072-bc52-f5ce73b62be6" class="">
+</p><p id="1e456a40-f5b2-80ce-9b99-ed01e84f2362" class="">
+</p><p id="1e456a40-f5b2-80fd-96f0-e19ddcfb3cfb" class="">
+</p><p id="1e456a40-f5b2-80aa-8cd8-ee3b285e46b6" class="">
+</p><p id="1e456a40-f5b2-8089-967c-ccef3b8a5693" class="">
+</p><p id="1e456a40-f5b2-8079-bc02-f6a6419af3a2" class="">
+</p><p id="1e456a40-f5b2-802e-b3c6-e091b8dd9c64" class="">
+</p><p id="1e456a40-f5b2-80c7-9177-c1a12d152cb2" class="">
+</p><p id="1e456a40-f5b2-8035-966e-c39abcc47993" class="">
+</p><p id="1e456a40-f5b2-8002-9141-f125957ba4d2" class="">
+</p><p id="1e456a40-f5b2-8059-a8dd-d566fc33c4d1" class="">
+</p><p id="1e456a40-f5b2-8091-8d9f-fa8016ed039b" class="">
+</p><p id="1e456a40-f5b2-8023-ab72-ebcd0e55ce9b" class="">
+</p><blockquote id="1e456a40-f5b2-80ef-aaf6-de33910dc0a5" class="">阿公阿嬤哇想曆實體</blockquote></div></div><div id="1e456a40-f5b2-80bd-a202-ee5bc1aea5af" class="column-list"><div id="1e456a40-f5b2-8092-bbd1-e24b195908cc" style="width:100%" class="column"><figure id="1e456a40-f5b2-8048-9b0d-d602825caebe" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/Group-12.png"><img style="width:205.9921875px" src="https://ting-portfolio.ghost.io/content/images/2025/04/Group-12.png"/></a></figure><p id="1e456a40-f5b2-80b9-b915-f8e058a067f5" class="">
+</p></div><div id="1e456a40-f5b2-8074-8d2d-f23d5d873f21" style="width:100%" class="column"><figure id="1e456a40-f5b2-80a2-864a-f076fcbf0d21" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/IMG_6673-1.png"><img style="width:190px" src="https://ting-portfolio.ghost.io/content/images/2025/04/IMG_6673-1.png"/></a></figure><p id="1e456a40-f5b2-805f-ae84-ce33c9e448c7" class="">
+</p></div><div id="1e456a40-f5b2-803a-8aea-df716f9ab5b2" style="width:100%" class="column"><figure id="1e456a40-f5b2-80c7-8dc7-e1390acd563d" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/IMG_6686-1.png"><img style="width:205.9921875px" src="https://ting-portfolio.ghost.io/content/images/2025/04/IMG_6686-1.png"/></a></figure><p id="1e456a40-f5b2-8004-b033-eb53dd350fae" class="">
+</p></div></div><blockquote id="1e456a40-f5b2-800e-9ae8-c70cbb1805b8" class=""><strong>不同世代的非同步溝通新模式</strong>。<strong>保留傳統日曆功能的設計</strong>。<strong>可累積成冊具紀念價值</strong></blockquote><h3 id="1e456a40-f5b2-8022-927c-ffcf61002a69" class=""><strong>User flow展示（長輩端撕日曆）</strong></h3><div id="1e456a40-f5b2-80e6-807f-e3c858b86a22" class="column-list"><div id="1e456a40-f5b2-80d9-a4db-e9ffa4c2fdc3" style="width:75%" class="column"><figure id="1e456a40-f5b2-803b-a923-ebad29e84a1c" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/user-flow4.png"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/user-flow4.png"/></a></figure><p id="1e456a40-f5b2-80a7-a86a-d52be096372c" class="">
+</p></div><div id="1e456a40-f5b2-804b-9155-e574e31cc899" style="width:25.000000000000007%" class="column"><p id="1e456a40-f5b2-80dd-b8cc-c8b909892eb5" class="">
+</p></div></div><h3 id="1e456a40-f5b2-8095-ab96-e7e4e37c65e9" class="">反思｜存續性與黏著度挑戰</h3><blockquote id="1e456a40-f5b2-80bf-b8d7-d82518194ef1" class="">在設計思考三大核心原則「可行性、需求性、存續性」中，《哇想曆》在需求面有明確洞察，但在可行性與存續性方面仍有發展空間：</blockquote><p id="1e456a40-f5b2-80a3-aa30-f09ae8306d7f" class="">
+</p><p id="1e456a40-f5b2-8036-8159-cd3b3ceb5205" class="">✦ 可行性（Feasibility）：受限於七天工作坊的時程與技術條件，實體裝置與 LINE Bot 僅完成初步雛形，尚未進入正式測試與迭代，互動頻率與功能使用成效難以評估。</p><p id="1e456a40-f5b2-800c-88f2-edda7a1e2f2b" class="">
+</p><p id="1e456a40-f5b2-800d-8dd1-d037121aa2b2" class="">✦ 存續性（Viability）：隨著未來銀髮族對科技接受度提升，單一紙本與實體日曆介面可能無法長期滿足不同世代的使用習慣。因此，裝置設計需持續思考跨世代與跨媒介的擴充彈性。</p><p id="1e456a40-f5b2-8043-b68d-e67593ce9149" class="">
+</p><p id="1e456a40-f5b2-8044-905c-d8a6c0c1fc39" class="">✦ 補充觀察</p><p id="1e456a40-f5b2-800d-879e-e2aa94615c9d" class="">孫輩使用者的黏著度不明，尚未有機制強化長期互動與提醒動機，缺乏「互動頻率提升」的成效觀察與後測評估。</p><p id="1e456a40-f5b2-8060-a175-e0978f87875a" class="">如何讓 LINE Bot 的使用行為持續融入日常，是未來可優化之處。</p><hr id="1e456a40-f5b2-8014-8277-e553ca956405"/><p id="1e456a40-f5b2-8032-9fc0-c914c1c448fc" class="">2024.06 - 07 OpenHCI人機互動工作坊</p><p id="1e456a40-f5b2-8006-8e01-d50d6848aff1" class="">Team｜施佳慧 陳星樺 陳亭蓁 葉芃 陳俐妤 邱藝瑄</p><p id="1e456a40-f5b2-80cf-95e4-c73950062ae7" class="">TA｜黃鈺善 蔡宜珊</p><p id="1e456a40-f5b2-8069-95a5-ee802d85002a" class="">最美好的夏日回憶！然後我就去當2025的總召了(つ´ω`)つ</p><hr id="1e456a40-f5b2-80df-bb3a-c9240eea60d8"/><p id="1e456a40-f5b2-8086-8827-f2ff2f49ddbd" class="">
+</p><h1 id="1e456a40-f5b2-8063-bd7a-e4f7f695b31d" class="">All Matter All Count 數位性暴力主題線上展設計</h1><figure id="1e456a40-f5b2-807d-96a3-fe404c68fbba" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/-----2.png"><img src="https://ting-portfolio.ghost.io/content/images/2025/04/-----2.png"/></a></figure><blockquote id="1e456a40-f5b2-809b-9c4f-ee079d3e114a" class="">2023.05 - 08</blockquote><p id="1e456a40-f5b2-80e5-a56a-fb08088aa222" class="">青年永續社會設計挑戰賽｜第三名</p><p id="1e456a40-f5b2-80a5-91fa-fbc435a4f9a3" class="">行動策劃｜訪談與展覽設計｜社會設計實踐｜視覺設計</p><h2 id="1e456a40-f5b2-8005-85d8-deca9a70379f" class="">社會問題</h2><p id="1e456a40-f5b2-800e-8f76-fc620d91394f" class=""><em><strong>數位時代的非自願私密影像外流</strong></em></p><p id="1e456a40-f5b2-8009-a556-dbb28ae26488" class="">在數位時代，非自願私密影像外流已成為日益嚴重的社會創傷。</p><p id="1e456a40-f5b2-80b0-9bc8-db69f817cd7e" class="">「只是看一下又不會怎樣？」這樣的旁觀心態，模糊了觀看者與加害者的界線，也讓許多受害者持續陷於難以被同理的痛苦中。</p><h2 id="1e456a40-f5b2-8012-bc01-f8637b9cd582" class="">設計方向</h2><p id="1e456a40-f5b2-80f7-92e7-c1c0451cec38" class=""><em><strong>提升社會同理心與翻轉輿論風向</strong></em></p><p id="1e456a40-f5b2-803e-9380-d98673778a33" class="">我們選擇從「觀看者」及「社會大眾」的角度切入，設計一場以受害者視角為主體的線上展覽，</p><p id="1e456a40-f5b2-808a-8df3-c78e9cc3ba8e" class="">透過情緒敘事與視覺引導，讓觀展者在沉浸過程中意識到——觀看也是一種加害。</p><p id="1e456a40-f5b2-808c-8a82-fa462b64333f" class=""><strong>設計策略聚焦在提升社會同理心與翻轉輿論風向，將「旁觀」的輕忽，轉化為理解與行動。</strong></p><h2 id="1e456a40-f5b2-80ca-b4d2-d4fccc9062a7" class="">解方：沉浸式線上展覽</h2><p id="1e456a40-f5b2-802e-94ce-f87321e52b98" class="">我們原希望透過視覺、實體物件與敘事節奏，打造一場<strong>具備情緒曲線的沉浸式展覽體驗</strong>。</p><p id="1e456a40-f5b2-80f0-ad9f-e1a537542b93" class="">為了實體展做準備，我們先<strong>推出街頭行動與前測線上展</strong>，但最終<strong>止步於此</strong>。</p><p id="1e456a40-f5b2-80bb-b93b-feae1d1bc2e4" class="">儘管只完成了前測階段，我們仍在設計中刻意安排悲傷與希望交織的情緒節奏，嘗試透過感官刺激引導觀者共情，進而理解受害者在數位性暴力中的處境與心境。</p><figure id="1e456a40-f5b2-8096-8991-f00df07992a3" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/----2.jpg"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/----2.jpg"/></a></figure><p id="1e456a40-f5b2-80f0-99b8-c49296e116a6" class="">｜新北市長邱兆梅翻閱展覽Demo手冊，了解我們如何用  設計回應數位性暴力議題。</p><h2 id="1e456a40-f5b2-80b8-8b0c-db175ab12c06" class="">我的角色</h2><ul id="1e456a40-f5b2-8027-a5d8-d0eb14412483" class="bulleted-list"><li style="list-style-type:disc">整體線上展與展覽手冊設計，將抽象議題具象化</li></ul><ul id="1e456a40-f5b2-80bb-9343-f1e8a90ab958" class="bulleted-list"><li style="list-style-type:disc">情緒曲線規劃，平衡觀展中的沈重與出口</li></ul><ul id="1e456a40-f5b2-801d-a991-e6470f5a72db" class="bulleted-list"><li style="list-style-type:disc">展場圖像、聲音與敘事節奏設計，強化觀者代入感</li></ul><div id="1e456a40-f5b2-8007-8ee9-e580c6ff322e" class="column-list"><div id="1e456a40-f5b2-8008-9b37-d00bdcf60a18" style="width:50%" class="column"><figure id="1e456a40-f5b2-802a-a687-d98780842309" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/snails2.png"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/snails2.png"/></a></figure></div><div id="1e456a40-f5b2-80ac-a4b9-cd403a485036" style="width:50%" class="column"><figure id="1e456a40-f5b2-8020-a2aa-d038fa2ef03d" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/snails1-1.png"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/snails1-1.png"/></a></figure></div></div><p id="1e456a40-f5b2-8006-9746-d861840455e3" class="">｜ 展覽手冊設計：以視覺敘事將抽象概念轉化  為可翻閱、可感受的實體內容。</p><h2 id="1e456a40-f5b2-8059-8585-d58d623d406c" class="">街頭行動｜從虛擬到實體，讓傷害被「看見」</h2><p id="1e456a40-f5b2-8001-be61-d03a97fee139" class="">在正式展覽前，我們以街頭行動作為議題觸發 ——</p><p id="1e456a40-f5b2-800b-bf08-d80c2b566aa2" class="">2023年6月，Snails+ 團隊於台北捷運中山站發起全台唯一的街頭行動，蒐集網路上針對私密影像外流受害者的攻擊性留言，並將象徵「觀看流量」的標誌圖示貼滿身體，邀請路人直視這些傷害，並親手撕除。</p><p id="1e456a40-f5b2-8085-9d98-f863f3fd5151" class="">現場不只是展示，更是一次<strong>真實的面對面對話</strong>。</p><p id="1e456a40-f5b2-804e-9a59-e204855e7764" class="">我們聆聽民眾不同立場的回應，理性引導對話，讓更多人重新思考「觀看」與「加害」之間的關係。同時，也邀請路人親手寫下，想對受害者說的一句話，留下鼓勵與支持 —— 「不要傷害他們」、「加油」、「你不是錯的」，一張張便條紙，成為療癒現場的力量，後續也一併收錄於線上展覽中，讓溫暖持續被看見。</p><p id="1e456a40-f5b2-8061-bb78-d68b35d04201" class="">相比冷冰冰的文宣或網路倡議，這樣近距離、具體而溫暖的溝通，讓議題真正被聽見、被感受。</p><p id="1e456a40-f5b2-8067-8ff0-e60b9165de01" class="">我們相信，改變從理解開始，而<strong>理解，來自每一次真誠凝視、書寫與傾聽。</strong></p><figure id="1e456a40-f5b2-8065-a62f-f05e0d96c56e" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/image.png"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/image.png"/></a></figure><p id="1e456a40-f5b2-804d-be38-fe885d8d2001" class=""><strong><a href="https://tw.news.yahoo.com/%E7%95%B6%E7%A7%81%E5%AF%86%E5%BD%B1%E5%83%8F%E5%A4%96%E6%B5%81%E5%8F%97%E5%AE%B3%E8%80%85%E7%AB%99%E5%9C%A8%E4%BD%A0%E9%9D%A2%E5%89%8D-%E4%BD%A0%E6%9C%83%E5%B0%8D%E4%BB%96%E8%AA%AA%E4%BB%80%E9%BA%BC-073523405.html?guccounter=1&amp;guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&amp;guce_referrer_sig=AQAAAMs14jok6bkBAtYuE7mxhRObKGuUPA0Mg7AtNZax5FE97LuTz2B-hJ3p9i9Kx4DT6ISocS0S7brtwUvY4KodvFiveIqnqsLRcNXBHAGKCJLyUVL5IzDreuVnD9r6SVFJDYCDq7Ef5xRCJD0R-yj5Hz3t9nHAmMjG_L5f7hLKofYd">〈當私密影像外流受害者站在你面前，你會對他說什麼？〉</a></strong>The News Lens 關鍵評論網</p><h2 id="1e456a40-f5b2-8009-80be-fce4456c7c06" class="">線上展覽試行｜從街頭走進虛擬空間的延伸共鳴</h2><p id="1e456a40-f5b2-803f-a711-d7bff914b89b" class="">我們將街頭行動的標語與收集來的匿名留言、對受害者的專訪、網路環境觀察等素材，轉化成一場前測線上展覽。展覽分為「黏在我身上的眼睛」、「你猜，它會跟著我多久...」、「其實你可以...」三個展區，觀者可透過點擊與聲音引導沉浸於故事當中，體驗受害者視角，也留下自己想說的話。</p><div id="1e456a40-f5b2-80f1-8949-d14f44aa91b8" class="column-list"><div id="1e456a40-f5b2-803d-ae45-eb509f88653b" style="width:50%" class="column"><figure id="1e456a40-f5b2-804b-bd33-c830c168f7c0" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/-------2025-04-19-234528.png"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/-------2025-04-19-234528.png"/></a></figure><figure id="1e456a40-f5b2-8035-b4e9-ea49dddcdb6b" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/-------2025-04-19-234627.png"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/-------2025-04-19-234627.png"/></a></figure><p id="1e456a40-f5b2-80a7-b6c5-f141f98c5144" class="">｜ 線上展覽概覽與<a href="https://www.artsteps.com/view/6491b80ef7276381dc86ff9a"><span style="border-bottom:0.05em solid">連結</span></a></p><p id="1e456a40-f5b2-8080-86f9-f6614ffb2953" class="">
+</p></div><div id="1e456a40-f5b2-8020-919c-f26d92b4381d" style="width:50%" class="column"><figure id="1e456a40-f5b2-8001-a4b1-d613ec0b4205" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/-------2025-04-19-234601.png"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/-------2025-04-19-234601.png"/></a></figure><figure id="1e456a40-f5b2-8087-b2f7-d6b65d481307" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/-------2025-04-19-234650.png"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/-------2025-04-19-234650.png"/></a></figure><p id="1e456a40-f5b2-8031-a1ab-f157414314c8" class="">
+</p></div></div><h2 id="1e456a40-f5b2-800e-afce-e3ffd7178ca0" class="">測驗成果</h2><p id="1e456a40-f5b2-80e5-9e2c-fe69340a1dce" class="">✦ 線上展邀請 10 位原 TA 參與</p><p id="1e456a40-f5b2-80c3-aa26-d65fc441751b" class="">✦ 「提升對受害者的同理心」平均評分：4.7 / 5</p><p id="1e456a40-f5b2-80b5-8765-e8576a8c318a" class="">✦ 專案報導刊登於<a href="https://ynews.page.link/avyft">《關鍵評論網》</a></p><figure id="1e456a40-f5b2-80ed-892b-e1a7ec3a08f3" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/----1-1.png"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/----1-1.png"/></a></figure><h2 id="1e456a40-f5b2-8036-8ca7-d35c92c33635" class="">TA設定</h2><p id="1e456a40-f5b2-8072-9a67-d1bcccbd15c7" class=""><strong>初始設定</strong></p><p id="1e456a40-f5b2-809d-87c1-cb9f68abffea" class="">專案初期，我們將目標受眾設定為「外流影片的觀看者」，期望透過行動讓觀看者意識到自身行為對受害者的二次傷害。</p><p id="1e456a40-f5b2-8012-a30b-e166be5fc724" class=""><strong>深化認識後的調整</strong></p><p id="1e456a40-f5b2-805e-9718-c72dcb88268d" class="">隨著對社會現象與群體行為的理解加深，我們發現單純鎖定觀看者過於狹隘，且易形成道德譴責的框架，可能反而引發防衛心理。</p><p id="1e456a40-f5b2-80a3-9af3-eb372d407407" class="">因此，我們重新定義目標受眾為：</p><ul id="1e456a40-f5b2-809c-8035-c131066349b9" class="bulleted-list"><li style="list-style-type:disc"><strong>對數位性暴力議題尚不認識的人</strong></li></ul><ul id="1e456a40-f5b2-80c6-acda-cffd6d28617b" class="bulleted-list"><li style="list-style-type:disc"><strong>已有社會議題關注意識的群體</strong></li></ul><p id="1e456a40-f5b2-805c-84db-e0280e5afd00" class=""><strong>策略轉向與影響</strong></p><p id="1e456a40-f5b2-8012-8c11-fd157331b09c" class="">藉由街頭行動與展覽互動，向更廣泛的大眾傳遞資訊、引發情感共鳴，進而<strong>形塑社會對數位性暴力的整體印象</strong>，讓更多人理解外流行為的本質傷害，</p><p id="1e456a40-f5b2-807c-ab48-dfc867687383" class="">從而在文化層次上產生遏止效果，而非僅止於個人層面的行為制止。</p><p id="1e456a40-f5b2-80f6-910f-de227e6176d9" class="">
+</p><h2 id="1e456a40-f5b2-80d5-830e-c3a6b923eb06" class="">反思｜文字能量強，但呈現形式需再優化</h2><p id="1e456a40-f5b2-8068-8d42-f72ced0b9090" class="">這場線上展覽雖然內容豐富，聚焦在觀者的反思與受害者的視角，但我們發現：<strong>「文字太多」</strong>成了沉浸體驗的一大阻礙。</p><p id="1e456a40-f5b2-8007-898e-e906893627ba" class="">展覽以敘事為主軸，但對於習慣短影音或快速滑動資訊的觀者來說，過長、過密的文字內容讓人不易停留，降低了共鳴的可能。</p><p id="1e456a40-f5b2-80f8-9b02-e9f7ee0bd152" class="">這提醒我們：</p><p id="1e456a40-f5b2-80de-ba19-f8448cafea43" class="">✦ 再強的內容，如果呈現形式不夠友善，仍難以觸及觀者內心</p><p id="1e456a40-f5b2-8016-b405-c2c2e4fa0b05" class="">✦ 情緒與資訊的傳遞，應透過圖像、聲音、互動設計等多元載體共構</p><p id="1e456a40-f5b2-80ff-b0f1-caf7636d33aa" class="">後續若有進一步開發，我們將朝向「以感官取代說理、用體驗代替閱讀」的方式優化設計，讓沉重主題也能被溫柔地接住。</p><blockquote id="1e456a40-f5b2-800b-98fd-d10541182b0b" class="">在這場設計中，我們不只是替受害者發聲，更試圖轉化觀者的視角。</blockquote><hr id="1e456a40-f5b2-80f7-9b1b-ca0e5b631756"/><p id="1e456a40-f5b2-8076-a19d-f5e80eb3a24c" class="">Team｜吳靜恩、張文、陳亭蓁</p><p id="1e456a40-f5b2-8062-b856-c8462d53e5a3" class="">新北市青年永續社會挑戰賽</p><hr id="1e456a40-f5b2-80f2-9d69-ffecaeaf86bb"/><p id="1e456a40-f5b2-8066-ad09-cfe5752a9334" class="">
+</p><h1 id="1e456a40-f5b2-804c-baa7-cd86f19f3928" class="">Everyday Creative Lab × 台博館｜新住民母親共創小誌工作坊</h1><figure id="1e456a40-f5b2-8072-abbe-c69b9f9c4a5e" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/instruction-book--1-.png"><img src="https://ting-portfolio.ghost.io/content/images/2025/04/instruction-book--1-.png"/></a></figure><blockquote id="1e456a40-f5b2-80f6-b1af-c18ddaea2730" class="">2025.01 - 02</blockquote><p id="1e456a40-f5b2-80e9-b00b-e35b658ba7f4" class="">與台博館合作舉辦共創工作坊　用小誌記錄下新住民母親「想說的話」</p><p id="1e456a40-f5b2-808a-b22a-f5a8048278da" class="">Everyday Creative Lab 大學部研究助理</p><h2 id="1e456a40-f5b2-807e-b188-cc1da74190d2" class="">共創工作坊目的</h2><p id="1e456a40-f5b2-8050-b4ef-dddd77aa99ef" class="">研究旨在設計一個專屬於新住民母親的聊天機器人（chatbot），成為她們情感傾訴與陪伴的出口。</p><p id="1e456a40-f5b2-8052-b2e1-cc4d11325fe9" class="">我們透過兩場共創工作坊，從拼貼小誌蒐集日常與心聲，並與母親們一起發想 chatbot 的互動內容、功能及語氣，讓設計回應真實需求，從對話中重新建立信任與連結。</p><h2 id="1e456a40-f5b2-804f-89bb-c3fe7fe57404" class="">我的角色</h2><ul id="1e456a40-f5b2-8064-8241-dddf22e9928b" class="bulleted-list"><li style="list-style-type:disc">共創工作坊籌備與使用者觀察</li></ul><ul id="1e456a40-f5b2-8054-b15e-d94bdf4f353a" class="bulleted-list"><li style="list-style-type:disc">設計 Instruction Book</li></ul><ul id="1e456a40-f5b2-8040-8be6-f9198f94a062" class="bulleted-list"><li style="list-style-type:disc">聚焦「好讀、好看、好開始」原則，降低語言與文化門檻，讓受訪者願意主動翻閱、理解並動手參與。</li></ul><h2 id="1e456a40-f5b2-80c8-883c-c66d9b2bf614" class="">設計亮點</h2><blockquote id="1e456a40-f5b2-80ac-8b20-f39e157a55a1" class="">1｜「不是教學手冊，而是一起玩的邀請」</blockquote><p id="1e456a40-f5b2-8061-b595-df697cd1aa23" class="">Toolkit 並非冷冰冰的工具包，我們在意的是「視覺語言」與「情感感受」。</p><p id="1e456a40-f5b2-8086-8baa-c0a1e6d009dc" class="">我們設計大量圖示與拼貼元素，降低文字密度，也讓閱讀感覺像是在翻一本溫暖的小書，而不是作業說明書。</p><div id="1e456a40-f5b2-80ec-ad28-ee5957369ca3" class="column-list"><div id="1e456a40-f5b2-80e9-bf3b-c4509197fdca" style="width:50%" class="column"><figure id="1e456a40-f5b2-8003-9b5b-e386ff45302f" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/instruction-book--2-.png"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/instruction-book--2-.png"/></a></figure><p id="1e456a40-f5b2-80ab-a41c-f272e1bddbcd" class="">
+</p><p id="1e456a40-f5b2-806e-bc76-ceb59f27dbdf" class="">我們鼓勵她們用圖像、顏色、直覺挑選元素組合，讓創作變成「我不會寫字也能參與」的入口。</p></div><div id="1e456a40-f5b2-80f8-b5d0-f8b2c95116cd" style="width:50%" class="column"><p id="1e456a40-f5b2-80d8-aef6-c5807fcb7006" class="">
+</p><blockquote id="1e456a40-f5b2-8088-bc14-e190ba6f1871" class="">2｜拼貼是表達，也是一種自我照顧</blockquote><p id="1e456a40-f5b2-807b-ac45-dc7cc65ca7fa" class="">在訪談與觀察中，我們發現拼貼行為本身對新住民媽媽是一種情緒出口，</p><p id="1e456a40-f5b2-8046-af31-e7b94077159a" class="">
+</p><figure id="1e456a40-f5b2-8067-8018-c20c581ede51" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/instruction-book--4-.png"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/instruction-book--4-.png"/></a></figure></div></div><h2 id="1e456a40-f5b2-80cd-9f29-ea065a4033e3" class=""><strong>初版到改版｜產品迭代能力實踐</strong></h2><div id="1e456a40-f5b2-80f7-886a-cd3e1786f753" class="column-list"><div id="1e456a40-f5b2-8063-9139-f948a5f3c410" style="width:50%" class="column"><figure id="1e456a40-f5b2-80f8-9ea3-f8bcd7bc1bdd" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/11.png"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/11.png"/></a></figure><p id="1e456a40-f5b2-8040-8168-e91121c33a37" class="">｜第一版（左），第二版（右）</p><p id="1e456a40-f5b2-806a-832f-f00b5dca01b9" class="">
+</p></div><div id="1e456a40-f5b2-8091-8251-e96ca62e50f3" style="width:50%" class="column"><figure id="1e456a40-f5b2-804d-80bd-fae13841403e" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/4-1.png"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/4-1.png"/></a></figure><p id="1e456a40-f5b2-8007-9abe-eaac72074fa6" class="">
+</p></div></div><p id="1e456a40-f5b2-80dd-8a63-c1b709766c90" class="">第一/二版說明書，雖已具備基本提問與拼貼框架，但實際觀察中發現：</p><p id="1e456a40-f5b2-809c-bb2b-f45a2992d0cb" class="">⛔ 題目較為抽象、不易切入</p><p id="1e456a40-f5b2-80fc-8ff1-e9dc03f5d86c" class="">⛔ 設計語言未能充分反映受訪者熟悉的視覺風格</p><p id="1e456a40-f5b2-80ee-aab3-e7d279770022" class="">⛔ 缺乏具體圖像指引與表達空間</p><p id="1e456a40-f5b2-809b-8a1b-fa953d75a288" class="">
+</p><p id="1e456a40-f5b2-801d-aeb3-cc89cd554690" class="">因此我們快速調整，發展出更貼近使用者的第三版：</p><p id="1e456a40-f5b2-804b-b608-e696cb6494ea" class="">✦ 重新分類題目主軸，讓使用者有更多切入點✦ 加入拼貼元素與生活物件設計，提升參與感✦ 明確圖文區塊配置，引導「像寫筆記本」的互動方式</p><blockquote id="1e456a40-f5b2-8054-88e4-e4ca8c9eb144" class="">這次迭代讓我學會：<p id="1e456a40-f5b2-8088-9577-f507eb21a860" class=""><strong>好的設計不是一次到位，而是不斷調整與回應。</strong></p></blockquote><div id="1e456a40-f5b2-8070-8057-d58e94f424d4" class="column-list"><div id="1e456a40-f5b2-80cf-9d80-ea4ad539e221" style="width:50%" class="column"><figure id="1e456a40-f5b2-807f-b3ed-f3c4f46eb9bb" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/instruction-book--2--1.png"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/instruction-book--2--1.png"/></a></figure><p id="1e456a40-f5b2-8068-aeaf-f454e9232c38" class="">
+</p><figure id="1e456a40-f5b2-8089-a139-e04fb988f4df" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/instruction-book--4--1.png"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/instruction-book--4--1.png"/></a></figure></div><div id="1e456a40-f5b2-8062-b07b-e6ad2dd037e3" style="width:50%" class="column"><figure id="1e456a40-f5b2-8023-a4c8-e4bc47b01eaa" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/instruction-book--3-.png"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/instruction-book--3-.png"/></a></figure><p id="1e456a40-f5b2-8085-82e8-e87d3baded62" class="">
+</p><figure id="1e456a40-f5b2-80ae-98e5-cefa4f74e341" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/-------2025-04-14-160333.png"><img style="width:332px" src="https://ting-portfolio.ghost.io/content/images/2025/04/-------2025-04-14-160333.png"/></a></figure></div></div><hr id="1e456a40-f5b2-80cc-8d84-cf58e1d44c34"/><p id="1e456a40-f5b2-807a-aa25-ffe8c36b98fa" class="">Team｜Everyday Creative Lab, 教授：陳盈羽｜研究助理：張恩愷、林羽柔、何貫綸、林序潔</p><hr id="1e456a40-f5b2-8014-ae17-fd1e30723a3d"/><p id="1e456a40-f5b2-8086-971c-ef990fcbcd86" class="">
+</p><h1 id="1e456a40-f5b2-8068-bcc2-eae157db9403" class="">陽明交大ICT網站Redesign</h1><figure id="1e456a40-f5b2-80a6-9288-e32da6beb5e4" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/------.png"><img src="https://ting-portfolio.ghost.io/content/images/2025/04/------.png"/></a></figure><blockquote id="1e456a40-f5b2-801c-a8d1-cbd3f22d956e" class="">2024.07 - 08</blockquote><blockquote id="1e456a40-f5b2-80c3-aebd-ce393a583efc" class="">設計一個不讓學生迷路的入口網站</blockquote><p id="1e456a40-f5b2-802f-8125-c22a34a80b4e" class="">2024 ICT Redesign UI/UX 設計挑戰賽｜冠軍</p><p id="1e456a40-f5b2-80b5-837b-e3bc3f6e4677" class="">UX Flow｜資訊架構重構｜Figma高保真原型｜專案管理</p><p id="1e456a40-f5b2-80d6-8eee-f1af7413efc3" class="">
+</p><p id="1e456a40-f5b2-80eb-aab7-c724efde645c" class="">在一次設計挑戰中，我帶領三人團隊重新設計交大 ICT 網站。測試顯示新版介面有效降低使用者找資料的時間，特別是「規章表格」頁面<strong>時間差異達86%</strong>。</p><figure id="1e456a40-f5b2-80d7-aea0-c3475b80bc68" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/LINE_ALBUM_----_241217_1.jpg"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/LINE_ALBUM_----_241217_1.jpg"/></a></figure><p id="1e456a40-f5b2-803d-be2a-d4fa7fe95909" class="">｜得冠軍拿１萬，開心。左邊數來第二個是我。</p><p id="1e456a40-f5b2-8061-a75d-dc4d5f46d874" class="">2024.07 - 08 陽交大ICT Redesign UI/UX 設計挑戰賽</p><h3 id="1e456a40-f5b2-8086-b6b3-d3306958db73" class=""><strong>使用者回饋摘要</strong></h3><p id="1e456a40-f5b2-80d3-8f97-fdbe8ec8dd9b" class="">我進行小型使用者測試，請受測者在舊版與新版介面上完成指定任務，紀錄並比較所需時間差異。</p><p id="1e456a40-f5b2-8006-9c78-ec4a44250a55" class=""><em>時間減少百分比 任務 時間</em><strong>-33% </strong>  找核心課程學分數 (12.03 s &gt;&gt; 8.40 s)　<strong>-78%</strong> 找諮詢導師 (18.83 s &gt;&gt; 4.05 s)<strong>-86% </strong> 找規章表格 (128.17 s &gt;&gt; 18.02s)</p><h3 id="1e456a40-f5b2-80ae-8dde-fd7ff6452511" class=""><strong>我的角色</strong></h3><ul id="1e456a40-f5b2-807b-8425-ce0612c1d598" class="bulleted-list"><li style="list-style-type:disc">負責專案時程與里程碑規劃，管理三人團隊任務分工</li></ul><ul id="1e456a40-f5b2-8097-8cfa-dba0ebb747d6" class="bulleted-list"><li style="list-style-type:disc">重新建構資訊架構與頁面導流流程</li></ul><ul id="1e456a40-f5b2-807d-ae1e-d9e637066473" class="bulleted-list"><li style="list-style-type:disc">協作介面設計，主導高保真互動原型製作</li></ul><ul id="1e456a40-f5b2-807b-824a-c23764827f18" class="bulleted-list"><li style="list-style-type:disc">負責最終簡報內容與使用者操作動線的呈現</li></ul><p id="1e456a40-f5b2-8043-8836-c5b176a6a886" class="">
+</p><p id="1e456a40-f5b2-80e8-9594-dc20126b478f" class="">我們發現原網站資訊雖豐富，但<strong>流程混亂、資訊層級不明確</strong>，<strong>用戶甚至會在網站中「迷路」</strong>。於是我們<strong>從使用者出發，規劃架構、重設頁面流程，並設計出符合需求的高保真互動原型</strong>，大大提升資訊查找效率！</p><div id="1e456a40-f5b2-8064-b826-e7294bd7b14b" class="column-list"><div id="1e456a40-f5b2-80d3-bf46-ea282d2fa936" style="width:75%" class="column"><figure id="1e456a40-f5b2-80a5-8474-e6e6b34cc265" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/ICT---1.png"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/ICT---1.png"/></a></figure><p id="1e456a40-f5b2-80f8-a708-ff6a941ea59b" class="">｜原網站痛點分析</p><p id="1e456a40-f5b2-8054-9b7c-e60cfbb4b40d" class="">
+</p></div><div id="1e456a40-f5b2-806a-a8c0-cbf0952ef062" style="width:25.000000000000007%" class="column"><p id="1e456a40-f5b2-809c-8f65-fca621c3498c" class="">
+</p></div></div><h3 id="1e456a40-f5b2-8043-9a40-cfc216d1894c" class="">Time to fix the problems! 怎麼改的？改了哪些？</h3><blockquote id="1e456a40-f5b2-80ed-978e-decce7019a9f" class=""><strong>1.資訊架構重整</strong></blockquote><p id="1e456a40-f5b2-8049-a0b8-ff17349ed5e4" class="">問題：單位與學程無關連。頁面資訊架構雜亂，</p><p id="1e456a40-f5b2-8068-8c20-eaa4f489616a" class=""><em><strong>解決：清晰化分層關係</strong></em></p><figure id="1e456a40-f5b2-8015-b70a-fea10cede0ce" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/---2-1.png"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/---2-1.png"/></a></figure><blockquote id="1e456a40-f5b2-80c3-8b8d-f03e5956324a" class=""><strong>2.頁面差別化設計</strong></blockquote><p id="1e456a40-f5b2-80ab-83a6-c2d674c25258" class="">問題：頁面無區別易混淆<strong>。</strong>專業領域小組與微學程頁面資訊內容不同，但頁面幾乎相同，使用者甚至不知道兩頁有何區別</p><p id="1e456a40-f5b2-807f-8494-fb154e986335" class=""><em><strong>解決：頁面差異化。在專業領域小組與微學程頁面版面規劃及顏色做出區別</strong></em></p><div id="1e456a40-f5b2-809b-92a3-eec8597367fe" class="column-list"><div id="1e456a40-f5b2-80d0-8582-e466f757e875" style="width:50%" class="column"><figure id="1e456a40-f5b2-8090-81de-e989100f5113" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/-------2024-08-10-161306-1.png"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/-------2024-08-10-161306-1.png"/></a></figure><figure id="1e456a40-f5b2-8041-80b7-c0af58e8cc06" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/-------2024-08-10-161323-1.png"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/-------2024-08-10-161323-1.png"/></a></figure></div><div id="1e456a40-f5b2-80a6-b8eb-e1c80a915aae" style="width:50%" class="column"><figure id="1e456a40-f5b2-80fd-8a04-c87698802bb3" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/-------2024-08-10-145948-1.png"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/-------2024-08-10-145948-1.png"/></a></figure><figure id="1e456a40-f5b2-8001-a89e-ee3b4c6b9824" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/-------2024-08-10-145928-1.png"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/-------2024-08-10-145928-1.png"/></a></figure></div></div><p id="1e456a40-f5b2-8083-a7db-ec3e855bfcca" class="">｜左圖（白底綠導覽列／字）為舊版網站，右圖（漸層淡色背景）為重新設計後的版本，做出頁面區別</p><p id="1e456a40-f5b2-80ea-bd19-eafd5bcc6e34" class="">
+</p><blockquote id="1e456a40-f5b2-8076-b623-cac15fa5f93a" class=""><strong>3.資訊內容改善</strong></blockquote><p id="1e456a40-f5b2-80af-9270-cfe6a10b6419" class="">問題：期望獲得資訊並未被滿足。使用者在點選領域小組時期望獲得的資訊內容包含微學程，但舊版規劃領域小組與微學程分別為兩個大項目，讓使用者難以找到微學程資訊</p><p id="1e456a40-f5b2-8048-a346-d7756a91175e" class=""><em><strong>解決：資訊統整、訊息連動。在主頁即顯示兩個按鈕，讓使用者明確知道分別，並在領域頁添加微學程課程資訊並增添連結按鈕</strong></em></p><div id="1e456a40-f5b2-80f4-b765-e279a6415a0b" class="column-list"><div id="1e456a40-f5b2-8029-9c5e-e199ce79c857" style="width:50%" class="column"><figure id="1e456a40-f5b2-800d-b6ed-d9891ed27bce" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/-------2024-08-10-150419.png"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/-------2024-08-10-150419.png"/></a></figure><p id="1e456a40-f5b2-8067-b790-e48181eca5fb" class="">
+</p><p id="1e456a40-f5b2-803d-bfdd-cd12badd3b11" class="">｜左圖一為舊版網站，右邊為重新設計後的版本。</p><p id="1e456a40-f5b2-80ce-98de-c2f791195c1c" class="">
+</p></div><div id="1e456a40-f5b2-8096-9d92-d74d84a8c970" style="width:50%" class="column"><figure id="1e456a40-f5b2-8087-9551-d51e2c6b7c13" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/-------1.png"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/-------1.png"/></a></figure><figure id="1e456a40-f5b2-80b7-80bd-d7115cce8d2b" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/-----.png"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/-----.png"/></a></figure><p id="1e456a40-f5b2-8065-aeca-cce0ae69508a" class="">
+</p></div></div><blockquote id="1e456a40-f5b2-80c1-bd1d-dcd77ded5cd5" class="">4.增加頁面價值</blockquote><p id="1e456a40-f5b2-8019-a966-cdac1b57a16f" class="">問題：頁面價值低。專業領域小組列表只可得知教授領域資訊，學生難以直觀了解領域內容</p><p id="1e456a40-f5b2-80a3-b41b-ea8dcc5eb3c7" class=""><em><strong>解決：新增關鍵字。優先展示「關鍵字」讓使用者更好理解內容，同時保留教授資訊</strong></em></p><div id="1e456a40-f5b2-8041-a725-e64d3262bd10" class="column-list"><div id="1e456a40-f5b2-80a1-a52f-d4fee329dc1a" style="width:56.25%" class="column"><figure id="1e456a40-f5b2-8085-9847-e08a83a58300" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/--------2.png"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/--------2.png"/></a></figure><p id="1e456a40-f5b2-80f4-bf59-f9112332dbbe" class="">
+</p><p id="1e456a40-f5b2-8088-845b-d0f57df53fb9" class="">｜左圖為舊版網站，右圖為重新設計後的版本，新增了Hashtags</p></div><div id="1e456a40-f5b2-80e5-bf79-d14e1b69de94" style="width:43.75%" class="column"><figure id="1e456a40-f5b2-80b3-9049-ef6ba0967ca6" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/hashtag-2.png"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/hashtag-2.png"/></a></figure><p id="1e456a40-f5b2-80b0-88eb-e6362355dc30" class="">
+</p></div></div><h2 id="1e456a40-f5b2-8075-ab18-d7d56d6b97e6" class="">設計草稿</h2><div id="1e456a40-f5b2-80f2-a7b3-e39a3cae8e53" class="column-list"><div id="1e456a40-f5b2-8061-88f6-c15f7cdc9a03" style="width:50%" class="column"><figure id="1e456a40-f5b2-8061-b6e1-f29ff3971a5a" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/F4--.png"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/F4--.png"/></a></figure><p id="1e456a40-f5b2-8032-bb36-f82d5acd963c" class="">
+</p><figure id="1e456a40-f5b2-808a-95db-f76b6bb35ae9" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/--1.png"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/--1.png"/></a></figure></div><div id="1e456a40-f5b2-805f-8765-f2713f5e2deb" style="width:50%" class="column"><p id="1e456a40-f5b2-80ed-978b-c9a41b38a062" class="">
+</p><figure id="1e456a40-f5b2-8004-bad0-d1aab0f683ae" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/---3.png"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/---3.png"/></a></figure><p id="1e456a40-f5b2-80f0-9ba3-e0599be2feda" class="">
+</p></div></div><blockquote id="1e456a40-f5b2-8097-b72b-d9e97c445980" class="">總而言之，我們打破原有資訊框架，為交大學生創造了兼具實用性與美觀，大幅提升資訊查找效率的網站！</blockquote><p id="1e456a40-f5b2-8089-bc07-d38b78b7b4eb" class="">
+</p><hr id="1e456a40-f5b2-8051-8e4a-c49ab15381de"/><p id="1e456a40-f5b2-80b6-a273-e001b0960dfa" class="">Team F4｜陳亭蓁、顏佑霓、吳婕恩、吳玗恬</p><p id="1e456a40-f5b2-800e-8fb9-c1ec835232d5" class="">2024 ICT Redesign UI/UX 設計挑戰賽</p><hr id="1e456a40-f5b2-806a-9755-f82961053bf1"/><p id="1e456a40-f5b2-80bb-85fa-fdf78cfcd92a" class="">
+</p><h1 id="1e456a40-f5b2-8068-9ffa-cf2c21152faa" class="">Moonlight babybox 交大首創復古街機娛樂企劃</h1><figure id="1e456a40-f5b2-80ea-91d4-ded53990770a" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/------2-.png"><img src="https://ting-portfolio.ghost.io/content/images/2025/04/------2-.png"/></a></figure><blockquote id="1e456a40-f5b2-8029-98bd-cc6c98c97e58" class="">復古街機電玩格鬥賽：兩週破萬觸及的校園行銷實驗</blockquote><p id="1e456a40-f5b2-8055-864b-da481675e4c4" class="">專案主導｜行銷策略規劃與執行｜社群內容設計與經營</p><p id="1e456a40-f5b2-8047-a4c8-c8d198745555" class="">
+</p><p id="1e456a40-f5b2-80b7-bdb5-db5cf974c6c5" class="">2024.12 交通大學</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1e456a40-f5b2-80fc-bec1-ce8213d3de96"><div style="width:100%"><p id="1e456a40-f5b2-8086-a74a-de822e311898" class="">🪄 為索然無味的交大生活，帶來一絲驚喜！</p></div></figure><p id="1e456a40-f5b2-8069-be70-c0bb47c1c8c7" class="">我們在交大校園設置<strong>「第一台」</strong>復古街機並舉辦<strong>「第一場」</strong>交大校園《拳皇》比賽，打造新鮮且共鳴強的活動體驗，為學生創造低時間與金錢成本的娛樂體驗。<strong>兩週內觸及破萬，單支影片觀看8000+</strong></p><p id="1e456a40-f5b2-802f-93fe-c0b92bb7ddc3" class=""><em>反思：TA 與復古街機的文化連結較弱，加上校園 7-11 並無類似機台文化，導致轉換率與收入不如預期。</em></p><h2 id="1e456a40-f5b2-8095-8168-dcbc5d753427" class="">成果與影響力</h2><p id="1e456a40-f5b2-806a-8778-d45c02e03a0b" class="">✦ IG 帳號<strong>兩週內</strong>觸及<strong>  6,544 </strong> 人</p><p id="1e456a40-f5b2-808f-91ba-eb6e0cedfb66" class="">✦ 帳號總觀看數將近 <strong>17,000</strong>，單支 Reels 突破<strong> 8,000 </strong>次觀看</p><p id="1e456a40-f5b2-805b-b307-f88c98a1a022" class="">✦ 現場吸引約 186 位實際互動者（不含免費試玩者）</p><p id="1e456a40-f5b2-80f3-bd40-ff7fe281f503" class="">✦ 成功觸發觀眾自發拍照、分享限動，打造延伸聲量</p><div id="1e456a40-f5b2-80b4-aa4b-d3c2dcfc002d" class="column-list"><div id="1e456a40-f5b2-803e-92b5-f53a2e3931ea" style="width:50%" class="column"><figure id="1e456a40-f5b2-8074-b453-ef75268ef077" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/D0633524-019F-4A7F-A673-50E17A19E37A.jpg"><img style="width:332px" src="https://ting-portfolio.ghost.io/content/images/2025/04/D0633524-019F-4A7F-A673-50E17A19E37A.jpg"/></a></figure><p id="1e456a40-f5b2-805b-8769-e0bdbbd053c1" class="">｜Moonlight babybox Instagram 流量</p></div><div id="1e456a40-f5b2-8047-8d9d-eae2e744ccde" style="width:50%" class="column"><figure id="1e456a40-f5b2-8044-b21c-f12706c81244" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/S__5873726.jpg"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/S__5873726.jpg"/></a></figure><p id="1e456a40-f5b2-8030-b2e1-fa7bf6d485ab" class="">
+</p></div></div><h2 id="1e456a40-f5b2-8087-80a7-f8414aae5169" class="">我的角色</h2><ul id="1e456a40-f5b2-80ef-b551-c6a4cbf91660" class="bulleted-list"><li style="list-style-type:disc">策劃活動主軸與互動流程，設計街機擺設與比賽機制</li></ul><ul id="1e456a40-f5b2-80f9-879c-f7eb87d864cb" class="bulleted-list"><li style="list-style-type:disc">規劃整體社群行銷，製作貼文與限動內容、剪輯影片並經營帳號，成功打造一致風格並激起觀眾參與與分享。</li></ul><ul id="1e456a40-f5b2-80e2-a5a0-efc7b4bbac38" class="bulleted-list"><li style="list-style-type:disc">現場紀錄使用者行為，優化遊戲體驗</li></ul><p id="1e456a40-f5b2-8025-9a06-f6496ca047d7" class="">
+</p><blockquote id="1e456a40-f5b2-808d-a8c6-d497284ddcdf" class="">「好無聊喔！新竹根本是沙漠！」</blockquote><p id="1e456a40-f5b2-80fd-bf9a-e0440143815e" class="">我們觀察到交大學生日常不是讀書、打工、逛巨城，就是說「沒什麼好玩」。那如果，有個讓人想停下腳步的活動——<strong>既熟悉、又有點不合時宜的東西出現在你面前呢？</strong></p><p id="1e456a40-f5b2-80e1-8737-cfc95e790a5e" class="">於是，我們安排了 <strong>復古街機放置在校園</strong> ，將懷舊元素包裝成一場低門檻、強互動的校園活動。</p><figure id="1e456a40-f5b2-800d-9ea3-f7e89b6cf574"><div class="source"><a href="%E7%8E%A9%E9%9B%BB%E5%8B%958%E7%A7%92.mp4">attachment:9e2051ed-d4c1-475c-bcce-99b83a1665b1:玩電動8秒.mp4</a></div></figure><p id="1e456a40-f5b2-8054-908c-dac38598537b" class="">｜復古街機實際遊玩</p><p id="1e456a40-f5b2-80d2-9e88-e2effdd73ded" class="">
+</p><p id="1e456a40-f5b2-8012-af8c-cae957a754a5" class="">在正式開始營運前，我們進行了試營運，並得出以下改進之處。</p><h2 id="1e456a40-f5b2-80ed-a2ec-e706324e04aa" class="">試營運中的洞察與修正</h2><p id="1e456a40-f5b2-8072-9b4b-fc06ba5d3b67" class="">初期試營運中，我們快速發現幾個關鍵問題：</p><p id="1e456a40-f5b2-805c-a6f0-fa32b86a5384" class="">✦ 機台知名度低，互動率不如預期</p><p id="1e456a40-f5b2-8008-84fb-ea1b14791172" class="">✦ 學生對「復古街機」缺乏文化共鳴</p><p id="1e456a40-f5b2-806d-828d-efd12768dc5e" class="">✦ 擺放地點為快速通過區域，難以吸引駐足</p><p id="1e456a40-f5b2-8069-ac11-e1ea064fb689" class="">根據觀察與使用者回饋，我們立刻展開調整：✦ 與<strong>校園網紅合作</strong>，提升活動曝光✦舉辦抽獎活動，協助資訊擴散✦ 舉辦<strong>《拳皇》電競比賽</strong>，酌收報名費，<strong>增強參與動機與營收結構</strong></p><blockquote id="1e456a40-f5b2-80fa-871c-ca7458d6d569" class="">這段過程讓我體會：<p id="1e456a40-f5b2-802a-8a74-f0f7554998c8" class=""><strong>一場好活動，從來不只是事前規劃，而是現場觀察、即時應變與快速迭代的能力總和。</strong></p></blockquote><h2 id="1e456a40-f5b2-80dc-827a-efa95f1e70de" class="">社群經營</h2><p id="1e456a40-f5b2-8019-adc0-cfe7379a129a" class=""><strong>Instagram 社群經營</strong></p><figure id="1e456a40-f5b2-80c6-bfb8-c529b7714a17" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/------2--1.png"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/------2--1.png"/></a></figure><p id="1e456a40-f5b2-80fa-9896-f4b5f1824091" class="">｜IG排版：復古像素電玩風格</p><ul id="1e456a40-f5b2-8057-a104-e45e5e33e723" class="bulleted-list"><li style="list-style-type:disc">採用<strong>復古像素風格</strong>，建立品牌視覺識別。</li></ul><ul id="1e456a40-f5b2-8040-9467-e899e40e76af" class="bulleted-list"><li style="list-style-type:disc">透過 <strong>抽獎活動</strong> 衝刺追蹤數，結合演算法曝光擴大觸及。</li></ul><ul id="1e456a40-f5b2-8076-a5c1-c381f146048c" class="bulleted-list"><li style="list-style-type:disc">製作<strong>遊戲互動式短片</strong>，利用快速輪播 + 暫停揭曉的形式，提升學生參與度與趣味性。</li></ul><ul id="1e456a40-f5b2-80a3-ac70-de15f476aa9f" class="bulleted-list"><li style="list-style-type:disc">與校內<strong>網紅合作</strong>，提升活動曝光與話題熱度。</li></ul><ul id="1e456a40-f5b2-80a4-9172-f45c1ee4ffc4" class="bulleted-list"><li style="list-style-type:disc">總共產出：<strong>8 篇貼文 + 21 則限時動態 + 1 支 Reels</strong>。</li></ul><ul id="1e456a40-f5b2-801c-8e68-f3302fdb4d27" class="bulleted-list"><li style="list-style-type:disc"><ul id="1e456a40-f5b2-803a-9044-d2b300fa1cd5" class="bulleted-list"><li style="list-style-type:circle"><strong>總觀看數</strong>：17,000+</li></ul><ul id="1e456a40-f5b2-8064-b25b-f03f45ae2bcc" class="bulleted-list"><li style="list-style-type:circle"><strong>觸及帳號數</strong>：6,544</li></ul><ul id="1e456a40-f5b2-80c1-a8fc-dfb2ee5680c7" class="bulleted-list"><li style="list-style-type:circle"><strong>粉絲數</strong>：74，<strong>互動次數</strong>：331</li></ul><ul id="1e456a40-f5b2-8020-bdcc-e46902be30df" class="bulleted-list"><li style="list-style-type:circle"><strong>單支 Reels</strong> 觀看數 8,179，獲 73 讚、3 留言、31 分享</li></ul><ul id="1e456a40-f5b2-806d-ae2a-dbd471f02d67" class="bulleted-list"><li style="list-style-type:circle"><strong>抽獎貼文</strong> 觀看數 3,141，獲 54 讚、69 留言、11 分享</li></ul></li></ul><hr id="1e456a40-f5b2-80c2-809e-c3fc20069389"/><p id="1e456a40-f5b2-80ae-a8ff-d137af1a7ba1" class=""><strong>Facebook 校園社群操作</strong></p><div id="1e456a40-f5b2-801e-a2f1-c618a1eae409" class="column-list"><div id="1e456a40-f5b2-80ae-acf0-cae7a7966ed2" style="width:50%" class="column"><figure id="1e456a40-f5b2-8053-be77-d0e546b369c4" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/1726152495_211599.png"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/1726152495_211599.png"/></a></figure><p id="1e456a40-f5b2-80fc-9f5f-c9bf57ae8e4b" class="">｜流行迷因 哥布林（左）、Chill Guy（右）</p><p id="1e456a40-f5b2-805c-bede-cc94bac6f3b3" class="">
+</p></div><div id="1e456a40-f5b2-807d-9381-e41940c2864d" style="width:50%" class="column"><figure id="1e456a40-f5b2-8065-97f8-c6b6ded2e5b2" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/chill_guy_png_transparent_by_unsermanemamamamaam_dir0jnr.png"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/chill_guy_png_transparent_by_unsermanemamamamaam_dir0jnr.png"/></a></figure><p id="1e456a40-f5b2-8071-9706-d02a948400c0" class="">
+</p></div></div><ul id="1e456a40-f5b2-803c-a149-df130afba3d3" class="bulleted-list"><li style="list-style-type:disc">結合流行迷因（如 Chill Guy、哥布林），打造符合<strong>學生語感</strong>的貼文，提高親和力與互動率。</li></ul><ul id="1e456a40-f5b2-80bd-a2a3-e1dfefb6da9a" class="bulleted-list"><li style="list-style-type:disc">貼文曾於清大與交大社團獲得<strong>超過 260 讚</strong>（雖然後來被刪了 🤣）。</li></ul><ul id="1e456a40-f5b2-80f9-80a6-fd6550e20432" class="bulleted-list"><li style="list-style-type:disc">廣泛分發至多個在地社團，如「新竹大小事」，擴大<strong>TA 觸及</strong>。<ul id="1e456a40-f5b2-80f1-a537-dcec1b6a44a0" class="bulleted-list"><li style="list-style-type:circle">新竹大小事社團：56 讚、6 留言</li></ul></li></ul><hr id="1e456a40-f5b2-8083-88e4-f981eb861541"/><p id="1e456a40-f5b2-80f2-b7cd-d7f660b5f9e9" class=""><strong>Dcard 校版操作</strong></p><ul id="1e456a40-f5b2-80fd-8e8f-e09f94c44d9c" class="bulleted-list"><li style="list-style-type:disc">避免傳統業配模式，改用<strong>假詢問真宣傳</strong>策略，提升自然互動。</li></ul><ul id="1e456a40-f5b2-80f4-a7dd-e94fdafd1a38" class="bulleted-list"><li style="list-style-type:disc">在交大校版發文（圖片+文字），<ul id="1e456a40-f5b2-80a0-b931-eee822266066" class="bulleted-list"><li style="list-style-type:circle">取得 15 讚、2 收藏、8 分享、7 留言</li></ul><ul id="1e456a40-f5b2-8099-8429-cbc5a1dba59b" class="bulleted-list"><li style="list-style-type:circle">在平均讚數僅約 3 的校版，成效顯著。</li></ul></li></ul><figure id="1e456a40-f5b2-8074-85b2-f1868521ceac" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/---_---.png"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/---_---.png"/></a></figure><p id="1e456a40-f5b2-80a6-a77e-f39f2d4ce832" class="">｜這不只是一場活動，更是一次用創意與節奏撬動觀眾注意力的實驗。</p><h2 id="1e456a40-f5b2-8033-be6e-c5bc54e35f38" class="">商業模式分析｜如何讓觀眾願意走進活動現場</h2><p id="1e456a40-f5b2-809c-94c6-ec74afb72641" class="">活動不只是一場比賽，更是讓人停下腳步、低成本參與的週末娛樂。我們以獨特裝置與遊戲體驗，為新竹學生創造記憶點。</p><blockquote id="1e456a40-f5b2-8037-807f-f9af5f5efa8f" class="">價值【期末的放鬆】：與朋友創造回憶（一起聊天、競爭、遊玩）＋特別的體驗（復古遊戲機）＋低成本娛樂（時間與金錢成本低）</blockquote><h2 id="1e456a40-f5b2-803c-80ec-d8a9d5ea304a" class="">反思｜流量不等於成果，熱度也需要對焦</h2><p id="1e456a40-f5b2-802c-8c6b-f4c63a45c865" class="">雖然活動兩週內 IG 觸及破萬、Reels 單支觀看達 8,000+，但實際轉換為利潤的效果有限。我們在事後檢討發現幾個關鍵問題：</p><ul id="1e456a40-f5b2-8023-9227-eb7cf812482f" class="bulleted-list"><li style="list-style-type:disc"><strong>未從 TA 出發</strong>：大學生對復古街機的文化連結相對薄弱，導致互動動機不足。</li></ul><ul id="1e456a40-f5b2-80be-9a37-d9961f04a713" class="bulleted-list"><li style="list-style-type:disc"><strong>場域選擇不精準</strong>：我們參考便利商店寶可夢機台的熱潮，卻忽略校內 7-11 並未有類似文化氛圍，造成期待與實際落差。</li></ul><ul id="1e456a40-f5b2-80fb-97ba-f52ca54354eb" class="bulleted-list"><li style="list-style-type:disc"><strong>缺乏後續黏著機制</strong>：活動雖吸引目光，卻缺乏延續參與的設計與誘因，未形成持續效應。</li></ul><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1e456a40-f5b2-8001-804c-c75d99a2f076"><div style="width:100%"><p id="1e456a40-f5b2-80fb-b2b8-c26ba424655f" class="">💡 這次專案讓我深刻體會：<strong>行銷設計不能只做亮點，更需要理解場域文化與使用者心理，讓熱度成為真正的價值轉換。</strong></p></div></figure><hr id="1e456a40-f5b2-80fb-a2c0-d8fb72a0af08"/><p id="1e456a40-f5b2-8071-a670-d85cca7c847e" class="">Team｜藍齒輪第十二屆  廖怡誠 花湧惠 蘇新友 徐瑩倢 陳亭蓁 王令瑄</p><hr id="1e456a40-f5b2-80b9-979e-c9041fc9f1a8"/><p id="1e456a40-f5b2-8041-9a9f-d9177cc87bd5" class="">
+</p><h1 id="1e456a40-f5b2-8037-b227-fbc5d0e39b45" class="">腦袋的Playground</h1><p id="1e456a40-f5b2-8076-9d42-ed272c84f47c" class="">在專案以外，我也喜歡玩創意、玩觀察，或是玩一點學術的嚴肅。這裡放的是我設計路上的一些邊角料，也是我腦袋的工作現場。</p><h2 id="1e456a40-f5b2-805a-a36c-edef95da5f8b" class=""><strong>✎ Sketch / Design Draft</strong></h2><div id="1e456a40-f5b2-8094-aa44-fd80778852df" class="column-list"><div id="1e456a40-f5b2-80e6-946b-e1783ff039e9" style="width:50%" class="column"><h3 id="1e456a40-f5b2-8007-a373-e737781e0f57" class=""><strong>✦ 每滑一次，都把時間貼在螢幕上</strong></h3><p id="1e456a40-f5b2-8068-bd6f-f660f33b1288" class="">
+</p><p id="1e456a40-f5b2-800d-bb5e-d8fdc940941b" class="">你越滑，越看不到畫面。</p><p id="1e456a40-f5b2-8045-83a1-f216b5b9b9fc" class="">
+</p><p id="1e456a40-f5b2-80e8-b9ad-d20462a69cc0" class="">每滑一篇貼文，就會出現一個「迷你貼文」半透明地疊在畫面上，</p><p id="1e456a40-f5b2-8024-bfa0-fe6172658c21" class="">
+</p><p id="1e456a40-f5b2-807b-954c-defa08d81e13" class="">隨時間堆疊，直到你看不清 IG 本體 —— 除非你主動停下來，留時間讓手機冷卻。</p><p id="1e456a40-f5b2-80f2-8d5f-de706e3a0367" class="">這不是禁用，而是提醒你：</p><p id="1e456a40-f5b2-80a1-a147-d0d812119b3d" class="">你已經看很多了，要不要給「專注」一點空間？</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1e456a40-f5b2-8042-b8a1-d896eeb7cd08"><div style="width:100%"><p id="1e456a40-f5b2-80e2-bc38-ed1cba5a54ba" class="">💡讓「無意識滑動」變得可視化，幫助你察覺並主動管理注意力。</p></div></figure><p id="1e456a40-f5b2-808c-b232-f889a72713ce" class="">
+</p></div><div id="1e456a40-f5b2-808f-b674-ca66efa84fff" style="width:50%" class="column"><figure id="1e456a40-f5b2-80a8-ab1a-c41d9cf5a91c" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/D205C5F8-E59A-46F4-827E-72DC1729691D.jpg"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/D205C5F8-E59A-46F4-827E-72DC1729691D.jpg"/></a></figure><p id="1e456a40-f5b2-80b5-b2dc-d5cd8b03064c" class="">｜原創設計，陳亭蓁版權所有（喂～）</p><p id="1e456a40-f5b2-802b-a338-db0a52bbae94" class="">
+</p></div></div><div id="1e456a40-f5b2-806d-aa71-ec59b5776b0d" class="column-list"><div id="1e456a40-f5b2-807c-a8dd-e5aa81b48e46" style="width:50%" class="column"><p id="1e456a40-f5b2-80a3-ba5e-d3aad157bfa6" class="">
+</p><figure id="1e456a40-f5b2-8071-96ab-dccab64bfb87" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/1D6E73CC-AEA5-4B1F-B50A-2940DA31FD96.jpg"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/1D6E73CC-AEA5-4B1F-B50A-2940DA31FD96.jpg"/></a></figure><p id="1e456a40-f5b2-80c1-8095-dbcf0b515674" class="">｜原創設計，陳亭蓁版權所有（喂～）</p></div><div id="1e456a40-f5b2-805c-8a60-dc078ba8918f" style="width:50%" class="column"><p id="1e456a40-f5b2-808f-aacd-ef2dee0322d8" class="">
+</p><h3 id="1e456a40-f5b2-8048-9a1d-e0ea28dce72f" class=""><strong>✦ 壓縮菜瓜布吊飾｜讓清潔也能很潮</strong></h3><p id="1e456a40-f5b2-800a-84a5-fe142374fa45" class="">原本想解決外帶餐盒難清洗的問題，設計隨身壓縮菜瓜布。但發現市面已有類似產品、利潤也偏低。</p><p id="1e456a40-f5b2-8048-a36f-e7c4bd749265" class="">
+</p><p id="1e456a40-f5b2-80a2-b441-ced121327042" class="">所以我轉了個念頭：</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1e456a40-f5b2-80d5-bc18-f0240b86fa5b"><div style="width:100%"><p id="1e456a40-f5b2-80b1-84a5-cb713a12d443" class="">💡把壓縮海綿裝進可愛造型的吊飾殼，吊在包包上，讓「攜帶清潔工具」變得像配件一樣自然。</p></div></figure><p id="1e456a40-f5b2-80f0-aed2-e699bb5affad" class="">功能還在，但價值主張變了：讓環保變時尚，讓行動變態度。</p><p id="1e456a40-f5b2-8099-9528-dd9903a7ba79" class="">
+</p></div></div><h2 id="1e456a40-f5b2-807b-ab69-e4e17d28ede7" class=""><strong>✒ 報告/研究</strong></h2><p id="1e456a40-f5b2-807e-a01f-ed69cec693f0" class="">身為傳播科技系學生，我也擅長進行具深度的社會與科技相關研究。從公關調查、社群平台規範、文化創新到語言文化影響，我累積了數篇跨領域研究成果。</p><p id="1e456a40-f5b2-806a-8327-f76e6d98fbd0" class="">理解理論，也讓我更能看見媒介與使用者之間微妙的影響關係。</p><p id="1e456a40-f5b2-806e-9036-e6a68f28093a" class="">
+</p><p id="1e456a40-f5b2-8057-b934-d88d3c5a6c27" class=""><a href="https://docs.google.com/document/d/1kCEQ1QptZU2ZrpsrRol5U5TCgNBuwMdUEY5ZI_nhVyE/edit?usp=sharing">📄 網路匿名與群體規範效應之比較</a></p><p id="1e456a40-f5b2-804b-977b-ca77ea0bed52" class=""><a href="https://docs.google.com/document/d/1EiDDdTvZl4L-4SoatRBQHnBmlgl4LuHYxTFuAHIqzBA/edit?usp=sharing">📄 小紅書對台灣年輕人語言與文化觀感的影響</a></p><p id="1e456a40-f5b2-80e5-a6e9-c2935f9d7947" class=""><a href="https://docs.google.com/document/d/1liFmH9n7FnXb5TcVAmOOrSxlgWbhzOVS/edit?usp=sharing&amp;ouid=112997568489241370230&amp;rtpof=true&amp;sd=true">📄 地方創新產業發展潛力分析：以芎林紙寮窩造紙工坊為例</a></p><p id="1e456a40-f5b2-80c5-ac01-d6ad5c151eb8" class=""><a href="https://docs.google.com/document/d/1Sj4Bpf2j4g81gULVLfBPgfv5PZB3qIYlf9JLAX_YLl4/edit?usp=sharing">📄 公關審查報告：以為台灣而教TFT為例 🔗</a></p><p id="1e456a40-f5b2-80a7-aad1-c951858eeb95" class="">
+</p><h2 id="1e456a40-f5b2-8052-985f-cef59596552b" class="">CSS × HTML × JS 個人網站</h2><p id="1e456a40-f5b2-803e-aecc-e455f72d8224" class="">自製網站呈現攝影與模特作品，結合互動元素展現創作。</p><figure id="1e456a40-f5b2-80f2-9ea9-c55757083b5e"><div class="source"><a href="TingChen_-_Google_Chrome_2025-04-23_22-45-44_-_Compressed_with_FlexClip.mp4">attachment:5940489c-fb01-4f83-ba27-e6abf44104b7:TingChen_-_Google_Chrome_2025-04-23_22-45-44_-_Compressed_with_FlexClip.mp4</a></div></figure><h2 id="1e456a40-f5b2-80dd-8870-f95f85dcbcba" class="">偶爾動手玩設計</h2><p id="1e456a40-f5b2-8028-84e4-eebd767d44f1" class="">Photoshop &amp; Illustrator 原創視覺創作</p><div id="1e456a40-f5b2-80cc-a35c-e9acc91b9c71" class="column-list"><div id="1e456a40-f5b2-80e9-ae32-cb43715f0f39" style="width:62.5%" class="column"><figure id="1e456a40-f5b2-8004-ab99-e5b3f597e7bf" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/---_111481026_---_Wish-I-were-a-cyborg-2.jpg"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/---_111481026_---_Wish-I-were-a-cyborg-2.jpg"/></a></figure><p id="1e456a40-f5b2-80ad-9d00-e33088f3e1a1" class="">｜Wish I were a cyborg</p><p id="1e456a40-f5b2-8053-b2ae-c69080af8baf" class="">
+</p></div><div id="1e456a40-f5b2-8056-b23e-ca60c0ca2cdb" style="width:37.5%" class="column"><figure id="1e456a40-f5b2-80a9-adbc-f875d917e104" class="image"><a href="https://ting-portfolio.ghost.io/content/images/2025/04/111481026_---_-----1.jpg"><img style="width:700px" src="https://ting-portfolio.ghost.io/content/images/2025/04/111481026_---_-----1.jpg"/></a></figure><p id="1e456a40-f5b2-80eb-ac79-e34410c0210a" class="">｜see, sea</p><p id="1e456a40-f5b2-8053-8aa1-ec3770e2410e" class="">
+</p></div></div><hr id="1e456a40-f5b2-8056-a4ba-e6825b204f3c"/><p id="1e456a40-f5b2-80e7-a385-dd7b1d938bce" class="">
+</p><p id="1e456a40-f5b2-80cb-ba3d-fc8970cbcf8d" class=""><strong>如果你正在找一位能做研究、懂設計、又能與工程團隊有效溝通的 UX / UI 實習生，</strong>我將是那個擁有多項產品設計與開發實作經驗、能從使用者出發、也能隨時調整自身角色、和團隊共創價值的人。</p><p id="1e456a40-f5b2-80f2-99e9-fecf80844a91" class="">—— 設計的起點是理解，而好設計的關鍵，是團隊的合力。</p><p id="1e456a40-f5b2-80d2-af4e-e1d1e656fd10" class="">Contact</p><p id="1e456a40-f5b2-803d-97df-d7b97ef215e7" class="">｜Email: <a href="mailto:tingchen2004@gmail.com">tingchen2004@gmail.com</a> </p><p id="1e456a40-f5b2-80e5-ab3b-ec01a199b79c" class="">｜Phone: +886 965-666-664（歡迎訊息聯繫！怕在上課接不到電話）</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
